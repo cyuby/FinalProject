@@ -24,6 +24,15 @@ public class WebSiteMainPage {
      @FindBy(xpath = "//*[@id=\"questions\"]/div[2]/h3/button")
      private WebElement howMuchDoesItCostToAttendButton;
 
+     @FindBy(xpath = "//*[@id=\"questions\"]/div[1]/h3/button")
+     private WebElement WhereIsYourInstitutionLocatedButton;
+
+     @FindBy(xpath = "//*[@id=\"learn-selenium\"]")
+     private WebElement scrollToSeleniumSection;
+
+     @FindBy(xpath = "//*[@id=\"learn-selenium\"]/div/div/div[1]/a")
+     private WebElement readMoreButton;
+
      public WebSiteMainPage(WebDriver driver){
           PageFactory.initElements(driver, this);
      }
@@ -36,13 +45,17 @@ public class WebSiteMainPage {
           this.emailField.sendKeys(string);
      }
 
-     public void clickOnTheReadMoreButtonOfTheFundamentalArea() {
-          this.clickOnTheReadMoreButtonOfTheFundamentalArea();
-     }
+     public void clickOnTheReadMoreButtonOfTheFundamentalArea(){this.clickOnTheReadMoreButtonOfTheFundamentalArea();}
 
      public void clickOnTheQuestionButton(){this.submitQuestionButton.click();}
 
      public WebElement getScrollToFrequentlyAskedQuestions(){return this.scrollToFrequentlyAskedQuestions;}
 
      public void clickOnHowMuchDoesItCostToAttendButton(){this.howMuchDoesItCostToAttendButton.click();}
+
+     public void clickOnWhereIsYourInstitutionLocatedButton(){this.WhereIsYourInstitutionLocatedButton.click();}
+
+     public WebElement getScrollToSeleniumSection(){return this.scrollToSeleniumSection; }
+
+     public void clickOnReadMoreButton(){this.readMoreButton.click();}
 }

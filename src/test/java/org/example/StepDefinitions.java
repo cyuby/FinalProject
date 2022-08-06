@@ -1,13 +1,14 @@
 package org.example;
 
 import PageObjects.WebSiteMainPage;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -32,9 +33,10 @@ public class StepDefinitions {
     public void i_enter_an_valid_email_address(String string) {
         mainPage.inputEmail(string);
     }
+
     @Then("The email save pop-up message appear")
     public void the_email_save_pop_up_message_appear() {
-
+        driver.switchTo().alert().accept();
     }
 
     @When("I click on the submit button")
@@ -66,6 +68,25 @@ public class StepDefinitions {
     public void the_answer_appear_below_the_question() {
 
     }
+    @Then("I click on the Where is your institution located? Question")
+    public void i_click_on_the_where_is_your_institution_located_question() {
+        Utils.scrollToElement(driver,mainPage.getScrollToFrequentlyAskedQuestions());
+        mainPage.clickOnWhereIsYourInstitutionLocatedButton();
+    }
+
+    @When("I scroll down the page to Learn Selenium section")
+    public void i_scroll_down_the_page_to_learn_selenium_section() {
+        Utils.scrollToElement(driver, mainPage.getScrollToSeleniumSection());
+    }
+    @When("I click on the Read More button")
+    public void i_click_on_the_read_more_button() {
+        mainPage.clickOnReadMoreButton();
+    }
+    @Then("The new page title should start with Selenium")
+    public void the_new_page_title_should_start_with_selenium() {
+        Assert.assertTrue(driver.getTitle().toLowerCase().startsWith("selenium"));
+    }
+
 
     @After
     public void closeBrowser(Scenario scenario) {
