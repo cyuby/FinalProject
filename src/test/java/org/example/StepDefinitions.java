@@ -86,7 +86,13 @@ public class StepDefinitions {
     public void the_new_page_title_should_start_with_selenium() {
         Assert.assertTrue(driver.getTitle().toLowerCase().startsWith("selenium"));
     }
+    @When("I click on the Instructors button")
+    public void i_click_on_the_instructors_button() {
 
+    }
+    @Then("The main page scroll down to Our Instructors area")
+    public void the_main_page_scroll_down_to_our_instructors_area() {
+    }
 
     @After
     public void closeBrowser(Scenario scenario) {

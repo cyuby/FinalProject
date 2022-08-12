@@ -33,6 +33,12 @@ public class WebSiteMainPage {
      @FindBy(xpath = "//*[@id=\"learn-selenium\"]/div/div/div[1]/a")
      private WebElement readMoreButton;
 
+     @FindBy(xpath = "//*[@id=\"navmenu\"]/ul/li[3]/a")
+     private WebElement submitInstructorsButton;
+
+     @FindBy (xpath = "//*[@id=\"instructors\"]")
+     private WebElement scrollToInstructorsArea;
+
      public WebSiteMainPage(WebDriver driver){
           PageFactory.initElements(driver, this);
      }
@@ -58,4 +64,8 @@ public class WebSiteMainPage {
      public WebElement getScrollToSeleniumSection(){return this.scrollToSeleniumSection; }
 
      public void clickOnReadMoreButton(){this.readMoreButton.click();}
+
+     public void clickOnTheInstructorsButton(){this.submitInstructorsButton.click();}
+
+     public WebElement getScrollToInstructorsArea(){return this.scrollToInstructorsArea;}
 }

@@ -32,4 +32,7 @@ Feature: Main Page Website
     And I click on the Read More button
     Then The new page title should start with Selenium
 
-
+  Scenario: Functionality of Instructors button
+    Given I am on the main page
+    When I click on the Instructors button
+    Then The main page scroll down to Our Instructors area
