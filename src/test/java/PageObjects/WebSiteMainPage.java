@@ -39,6 +39,10 @@ public class WebSiteMainPage {
      @FindBy (xpath = "//*[@id=\"instructors\"]")
      private WebElement scrollToInstructorsArea;
 
+     @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[1]/div/div/a[1]/i")
+     private WebElement clickOnJohnDoeTwitterButton;
+
+
      public WebSiteMainPage(WebDriver driver){
           PageFactory.initElements(driver, this);
      }
@@ -68,4 +72,6 @@ public class WebSiteMainPage {
      public void clickOnTheInstructorsButton(){this.submitInstructorsButton.click();}
 
      public WebElement getScrollToInstructorsArea(){return this.scrollToInstructorsArea;}
+
+     public void clickOnJohnDoeTwitterButton() {this.clickOnJohnDoeTwitterButton.click();}
 }

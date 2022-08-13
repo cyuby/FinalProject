@@ -45,11 +45,9 @@ public class StepDefinitions {
     }
     @When("I click on the Read More button of the fundamental area")
     public void i_click_on_the_read_more_button_of_the_fundamental_area() {
-
     }
     @Then("The new main page appear")
     public void the_new_main_page_appear() {
-
     }
     @When("I click on the Questions button")
     public void i_click_on_the_questions_button() {
@@ -57,7 +55,6 @@ public class StepDefinitions {
     }
     @Then("The main page scroll down to Frequently Asked Questions")
     public void the_main_page_scroll_down_to_frequently_asked_questions() {
-
     }
     @Then("I click on the How much does it cost to attend? Question")
     public void i_click_on_the_how_much_does_it_cost_to_attend_question() {
@@ -66,7 +63,6 @@ public class StepDefinitions {
     }
     @Then("The answer appear below the question")
     public void the_answer_appear_below_the_question() {
-
     }
     @Then("I click on the Where is your institution located? Question")
     public void i_click_on_the_where_is_your_institution_located_question() {
@@ -88,10 +84,21 @@ public class StepDefinitions {
     }
     @When("I click on the Instructors button")
     public void i_click_on_the_instructors_button() {
-
+        mainPage.clickOnTheInstructorsButton();
     }
     @Then("The main page scroll down to Our Instructors area")
     public void the_main_page_scroll_down_to_our_instructors_area() {
+        Utils.scrollToElement(driver, mainPage.getScrollToInstructorsArea());
+    }
+    @When("I click on John Doe twitter button")
+    public void i_click_on_john_doe_twitter_button() {
+        Utils.scrollToElement(driver, mainPage.getScrollToInstructorsArea());
+        mainPage.clickOnJohnDoeTwitterButton();
+    }
+    @Then("The page should take me to {string} site")
+    public void the_page_should_take_me_to_site(String string) {
+        Utils.waitForElementToLoad(2);
+        Assert.assertTrue(driver.getTitle().toLowerCase().startsWith(string));
     }
 
     @After

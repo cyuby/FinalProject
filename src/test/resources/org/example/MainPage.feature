@@ -36,3 +36,8 @@ Feature: Main Page Website
     Given I am on the main page
     When I click on the Instructors button
     Then The main page scroll down to Our Instructors area
+
+  Scenario: Valid John Doe Instructor Twitter
+    Given I am on the main page
+    When I click on John Doe twitter button
+    Then The page should take me to "twitter" site
