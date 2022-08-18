@@ -41,3 +41,19 @@ Feature: Main Page Website
     Given I am on the main page
     When I click on John Doe twitter button
     Then The page should take me to "twitter" site
+
+  Scenario: Valid Jane Doe Instructor Facebook
+    Given I am on the main page
+    When I click on Jane Doe facebook button
+    Then The page should take me to "facebook" site
+
+  Scenario: Valid Steve Smith Instructor LinkedIn
+    Given I am on the main page
+    When I click on Steve Smith linkedin button
+    Then The page should take me to "linkedin" site
+
+  Scenario: Valid Sara Smith Instructor Instagram
+    Given I am on the main page
+    When I click on Sara Smith instagram button
+    Then The page should take me to "instagram" site
+

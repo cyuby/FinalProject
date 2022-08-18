@@ -101,6 +101,24 @@ public class StepDefinitions {
         Assert.assertTrue(driver.getTitle().toLowerCase().startsWith(string));
     }
 
+    @When("I click on Jane Doe facebook button")
+    public void i_click_on_jane_doe_facebook_button() {
+        Utils.scrollToElement(driver, mainPage.getScrollToInstructorsArea());
+        mainPage.setClickOnJaneDoeFacebookButton();
+    }
+
+    @When("I click on Steve Smith linkedin button")
+    public void i_click_on_steve_smith_linkedin_button() {
+        Utils.scrollToElement(driver, mainPage.getScrollToInstructorsArea());
+        mainPage.setClickOnSteveSmithLinkedInButton();
+    }
+
+    @When("I click on Sara Smith instagram button")
+    public void i_click_on_sara_smith_instagram_button() {
+        Utils.scrollToElement(driver, mainPage.getScrollToInstructorsArea());
+        mainPage.setClickOnSaraSmithInstagramButton();
+    }
+
     @After
     public void closeBrowser(Scenario scenario) {
         if (scenario.isFailed()) {

@@ -42,6 +42,14 @@ public class WebSiteMainPage {
      @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[1]/div/div/a[1]/i")
      private WebElement clickOnJohnDoeTwitterButton;
 
+     @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[2]/div/div/a[2]/i")
+     private WebElement clickOnJaneDoeFacebookButton;
+
+     @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[3]/div/div/a[3]/i")
+     private WebElement clickOnSteveSmithLinkedInButton;
+
+     @FindBy(xpath = "//*[@id=\"instructors\"]/div/div/div[4]/div/div/a[4]/i")
+     private WebElement clickOnSaraSmithInstagramButton;
 
      public WebSiteMainPage(WebDriver driver){
           PageFactory.initElements(driver, this);
@@ -74,4 +82,12 @@ public class WebSiteMainPage {
      public WebElement getScrollToInstructorsArea(){return this.scrollToInstructorsArea;}
 
      public void clickOnJohnDoeTwitterButton() {this.clickOnJohnDoeTwitterButton.click();}
-}
+
+     public void setClickOnJaneDoeFacebookButton() {this.clickOnJaneDoeFacebookButton.click();}
+
+     public void setClickOnSteveSmithLinkedInButton() {this.clickOnSteveSmithLinkedInButton.click();}
+
+     public void setClickOnSaraSmithInstagramButton() {this.clickOnSaraSmithInstagramButton.click();}
+
+     }
+
